@@ -5,7 +5,7 @@ from src.aws.dynamo.functions.save_on_dynamo import save_data_on_dynamo
 from src.utils.hash_generator import hash_generator
 import json
 
-def v2_tts_lambda(event, context):
+def v3_tts_lambda(event, context):
     try:
         # text = event["phrase"]
         user_post = json.loads(event["body"])
