@@ -26,7 +26,7 @@ def v3_tts_lambda(event, context):
             }
 
         else:
-            created_date, audio_file = get_audio_and_date(text)
+            audio_file, created_date = get_audio_and_date(text)
 
             audio_link = save_audio_on_s3_and_get_link(
                 key=text_hash, audio_file=audio_file)
@@ -39,8 +39,10 @@ def v3_tts_lambda(event, context):
             }
 
             save_data_on_dynamo(api_return)
+
         return json.dumps(api_return)
+        # return api_return
     
     except Exception as err:
-        return f'error: {str(err)}'
-        # raise err
+        # return f'error: {str(err)}'
+        raise err

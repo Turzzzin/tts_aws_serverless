@@ -11,8 +11,8 @@ def fetch_hash_on_dynamo(hash):
         }
 
         item = dynamo.get_item(TableName=env('dynamo_table'), Key=key)
+        
+        return item
     except Exception as err:
         return f'error: {str(err)}'
         # raise err
-
-print(fetch_hash_on_dynamo(""))
