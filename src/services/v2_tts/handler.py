@@ -1,0 +1,6 @@
+
+def v2_tts_lambda(event, context):
+    try:
+        ...
+    except:
+        ...
