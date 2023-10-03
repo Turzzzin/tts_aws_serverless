@@ -20,7 +20,8 @@ def v2_tts_lambda(event, context):
         api_return = {
             'received_phrase': text,
             'url_to_audio': audio_link,
-            'created_audio': created_date
+            'created_audio': created_date,
+            'unique_id': text_hash
         }
 
         save_data_on_dynamo(api_return)

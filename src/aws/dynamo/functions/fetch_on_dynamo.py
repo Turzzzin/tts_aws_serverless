@@ -4,7 +4,7 @@ from os import getenv as env
 
 load_dotenv()
 
-def fetch_hash_on_dynamo():
+def fetch_hash_on_dynamo(hash):
     try:
         key = {
             "hash": {"S": hash}
@@ -14,3 +14,5 @@ def fetch_hash_on_dynamo():
     except Exception as err:
         return f'error: {str(err)}'
         # raise err
+
+print(fetch_hash_on_dynamo(""))
